@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright IBM Corporation 2022
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+  http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+ 
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.ibmcloud.eclipse.cli.commands.category"
+            name="IBMCloud CLI Category">
+      </category>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud help"
+            description="Show help"
+            id="com.ibmcloud.eclipse.cli.commands.help">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud version"
+            description="Print the version"
+            id="com.ibmcloud.eclipse.cli.commands.version">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud login -sso"
+            description="Log user in using SSO"
+            id="com.ibmcloud.eclipse.cli.commands.login.sso">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud login"
+            description="Log user in"
+            id="com.ibmcloud.eclipse.cli.commands.login">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud logout"
+            description="Log user out"
+            id="com.ibmcloud.eclipse.cli.commands.logout">
+      </command>
+      <!--
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud update"
+            description="Update CLI to the latest version"
+            id="com.ibmcloud.eclipse.cli.commands.update">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev list"
+            description="List all IBM Cloud applications in a resource group"
+            id="com.ibmcloud.eclipse.cli.commands.dev.list">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev debug"
+            description="Debug your application in a local container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.debug">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev deploy"
+            description="Deploy an application to IBM Cloud"
+            id="com.ibmcloud.eclipse.cli.commands.dev.deploy">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev build"
+            description="Build the application in a local container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.build">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev build release"
+            description="Build the application release version"
+            id="com.ibmcloud.eclipse.cli.commands.dev.build.release">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev run"
+            description="Run your application in a local container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.run">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev status"
+            description="Check the status of the containers used by the CLI"
+            id="com.ibmcloud.eclipse.cli.commands.dev.status">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev shell run"
+            description="Open a shell into the run container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.shell.run">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev shell tools"
+            description="Open a shell into the tools container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.shell.tools">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev stop"
+            description="Stop a container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.stop">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev test"
+            description="Test your application in a local container"
+            id="com.ibmcloud.eclipse.cli.commands.dev.test">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev console"
+            description="Opens the IBM Cloud console for an application"
+            id="com.ibmcloud.eclipse.cli.commands.dev.console">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud dev console app"
+            description="Opens the IBM Cloud console for an application"
+            id="com.ibmcloud.eclipse.cli.commands.dev.console.app">
+      </command>
+      -->
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            name="ibmcloud resource service-instances"
+            description="List service instances"
+            id="com.ibmcloud.eclipse.cli.commands.resource.service-instances">
+      </command>
+      <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="Initialize the Kubernetes Service plug-in and get authentication tokens"
+            id="com.ibmcloud.eclipse.cli.commands.ks.init"
+            name="ibmcloud ks init">
+      </command>
+      <!--
+      <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="List all worker nodes in a cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.workers"
+            name="ibmcloud ks workers">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="Add a worker node to a cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.worker.add"
+            name="ibmcloud ks worker add">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="Remove a worker node from a cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.worker.rm"
+            name="ibmcloud ks worker rm">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="Restart a worker node"
+            id="com.ibmcloud.eclipse.cli.commands.ks.worker.reboot"
+            name="ibmcloud ks worker reboot">
+      </command>
+      <command
+            categoryId="com.ibmcloud.eclipse.cli.commands.category"
+            description="Delete the data, reimage, and reinstall Kubernetes with the latest patch version on a worker node in a classic cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.worker.reload"
+            name="ibmcloud ks worker reload">
+      </command>
+      <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+      		description="View the details of a worker node"
+            id="com.ibmcloud.eclipse.cli.commands.ks.worker.get"
+            name="ibmcloud ks worker get">
+      </command>
+      -->
+       <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+      		description="View the details of a cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.cluster.get"
+            name="ibmcloud ks cluster get -c $Cluster">
+      </command>
+       <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+      		description="Delete a cluster"
+            id="com.ibmcloud.eclipse.cli.commands.ks.cluster.rm"
+            name="ibmcloud ks cluster rm -f -c $Cluster">
+      </command>
+       <command
+      		categoryId="com.ibmcloud.eclipse.cli.commands.category"
+      		description="List all clusters in your IBM Cloud account"
+            id="com.ibmcloud.eclipse.cli.commands.ks.clusters"
+            name="ibmcloud ks clusters">
+      </command>
+       <command
+             description="View target API endpoint"
+             id="com.ibmcloud.eclipse.cli.commands.api"
+             name="ibmcloud api">
+       </command>
+       <command
+             description="List all the regions"
+             id="com.ibmcloud.eclipse.cli.commands.regions"
+             name="ibmcloud regions">
+       </command>
+       <command
+             description="View the targeted region, account, resource group, org or space"
+             id="com.ibmcloud.eclipse.cli.commands.target"
+             name="ibmcloud target">
+       </command>
+             <command
+             description="View all accounts in the targeted account"
+             id="com.ibmcloud.eclipse.cli.commands.account.list"
+             name="ibmcloud account list">
+       </command>
+       <command
+             description="View the targeted account info"
+             id="com.ibmcloud.eclipse.cli.commands.account.show"
+             name="ibmcloud account show">
+       </command>
+       <command
+             description="View users in the targeted account"
+             id="com.ibmcloud.eclipse.cli.commands.account.users"
+             name="ibmcloud account users">
+       </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.help">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.version">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.resource.service-instances">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.login.sso">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.login">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.logout">
+      </handler>
+      <!--
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.update">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.list">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.debug">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.deploy">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.build">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.build.release">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.run">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.status">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.shell.run">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.shell.tools">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.stop">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.test">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.console">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.dev.console.app">
+      </handler>
+      -->
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.get">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.rm">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.clusters">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.init">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.api">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.regions">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.target">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.account.show">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.account.users">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.account.list">
+      </handler>
+      <!--
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.worker.add">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.worker.get">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.worker.reboot">
+      </handler>
+      <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.worker.reload">
+      </handler>
+       <handler
+            class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+            commandId="com.ibmcloud.eclipse.cli.commands.ks.worker.rm">
+      </handler>
+       <handler
+             class="com.ibmcloud.cli.handler.IBMCloudCLIHandler"
+             commandId="com.ibmcloud.eclipse.cli.commands.ks.workers">
+       </handler>
+       -->
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="com.ibmcloud.eclipse.cli.menus.ic"
+               label="IBMCloud"
+               mnemonic="M">
+            <command
+                  commandId="com.ibmcloud.eclipse.cli.commands.version"
+                  id="com.ibmcloud.eclipse.cli.menus.version"
+                  label="Version"
+                  tooltip="Print the version">
+            </command>
+            <command
+                  commandId="com.ibmcloud.eclipse.cli.commands.help"
+                  id="com.ibmcloud.eclipse.cli.menus.help"
+                  label="Help"
+                  tooltip="Show help">
+            </command>
+            <menu
+                  label="Login">
+               <command
+                     commandId="com.ibmcloud.eclipse.cli.commands.login"
+                     id="com.ibmcloud.eclipse.cli.menus.login"
+                     label="Login with password"
+                     tooltip="Log user in with password">
+               </command>
+               <command
+                     commandId="com.ibmcloud.eclipse.cli.commands.login.sso"
+                     id="com.ibmcloud.eclipse.cli.menus.login.sso"
+                     label="Login with SSO"
+                     tooltip="Log user in using SSO">
+               </command>
+             </menu>
+              <menu
+                  label="Account">
+               <command
+                     commandId="com.ibmcloud.eclipse.cli.commands.account.list"
+                     id="com.ibmcloud.eclipse.cli.menus.account.list"
+                     label="List"
+                     tooltip="View all accounts in the targeted account">
+               </command>
+               <command
+                     commandId="com.ibmcloud.eclipse.cli.commands.account.show"
+                     id="com.ibmcloud.eclipse.cli.menus.account.show"
+                     label="Show"
+                     tooltip="View the targeted account info">
+               </command>
+               <command
+                     commandId="com.ibmcloud.eclipse.cli.commands.account.users"
+                     id="com.ibmcloud.eclipse.cli.menus.account.users"
+                     label="Users"
+                      tooltip="View users in the targeted account">
+               </command>
+             </menu>
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.logout"
+                   id="com.ibmcloud.eclipse.cli.menus.logout"
+                   label="Log Out"
+                   tooltip="Log user out">
+             </command>
+             <!--
+             <menu
+                   label="Developer">
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.list"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.list"
+                      label="List Applications"
+                      tooltip="List all IBM Cloud applications in a resource group">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.status"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.status"
+                      label="Check status"
+                      tooltip="Check the status of the containers used by the CLI">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.build"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.build"
+                      label="Build"
+                      tooltip="Build the application in a local container">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.build.release"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.build.release"
+                      label="Build release"
+                      mnemonic="R"
+                      tooltip="Build the application release version">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.run"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.run"
+                      label="Run"
+                      tooltip="Run your application in a local container">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.debug"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.debug"
+                      label="Debug"
+                      tooltip="Debug your application in a local container">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.deploy"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.deploy"
+                      label="Deploy"
+                      tooltip="Deploy an application to IBM Cloud">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.stop"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.stop"
+                      label="Stop Container"
+                      tooltip="Stop a Container">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.test"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.test"
+                      label="Test"
+                      tooltip="Test your application in a local container">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.console"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.console"
+                      label="Open Console"
+                      tooltip="Opens the IBM Cloud console for an application">
+                </command>
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.dev.console.app"
+                      id="com.ibmcloud.eclipse.cli.menus.dev.console.app"
+                      label="Open Console App"
+                      tooltip="Opens the IBM Cloud console for an application">
+                </command>
+                <menu
+                      label="Shell">
+                   <command
+                         commandId="com.ibmcloud.eclipse.cli.commands.dev.shell.run"
+                         id="com.ibmcloud.eclipse.cli.menus.dev.shell.run"
+                         label="Run"
+                         tooltip="Open a shell into the run container">
+                   </command>
+                   <command
+                         commandId="com.ibmcloud.eclipse.cli.commands.dev.shell.tools"
+                         id="com.ibmcloud.eclipse.cli.menus.dev.shell.tools"
+                         label="Tools"
+                         tooltip="Open a shell into the tools container">
+                   </command>
+                </menu>
+             </menu>
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.update"
+                   id="com.ibmcloud.eclipse.cli.menus.update"
+                   label="Update"
+                   tooltip="Update CLI to the latest version">
+             </command>
+             -->
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.resource.service-instances"
+                   id="com.ibmcloud.eclipse.cli.menus.resource.service-instances"
+                   label="List Service instances"
+                   tooltip="List service instances">
+             </command>
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.api"
+                   label="View API Endpoint"
+                   tooltip="View target API endpoint">
+             </command>
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.regions"
+                   label="List regions"
+                   tooltip="List all the regions">
+             </command>
+             <command
+                   commandId="com.ibmcloud.eclipse.cli.commands.target"
+                   label="View Target"
+                   tooltip="View the targeted region, account, resource group, org or space">
+             </command>
+             <menu
+                   label="Kubernetes">
+                <command
+                      commandId="com.ibmcloud.eclipse.cli.commands.ks.init"
+                      label="Initialize"
+                      tooltip="Initialize the Kubernetes Service plug-in and get authentication tokens">
+                </command>
+                <menu
+                      label="Clusters">
+                   <command
+                         commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.get"
+                         label="Get Details"
+                         tooltip="View the details of a cluster">
+                   </command>
+                   <command
+                         commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.rm"
+                         label="Remove Cluster"
+                         tooltip="Delete a cluster">
+                   </command>
+                   <command
+                         commandId="com.ibmcloud.eclipse.cli.commands.ks.clusters"
+                         label="List All"
+                         tooltip="List all clusters in your IBM Cloud account">
+                   </command>
+                </menu>
+             </menu>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.commandImages">
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.help"
+          icon="/icons/help.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.login"
+          icon="/icons/login.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.logout"
+          icon="/icons/logout.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.login.sso"
+          icon="/icons/login.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.ks.init"
+          icon="/icons/kubernetes.png">
+      </image>
+            <image
+          commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.get"
+          icon="/icons/kubernetes.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.ks.cluster.rm"
+          icon="/icons/kubernetes.png">
+      </image>
+      <image
+          commandId="com.ibmcloud.eclipse.cli.commands.ks.clusters"
+          icon="/icons/kubernetes.png">
+      </image>
+    </extension>
+
+</plugin>
