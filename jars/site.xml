@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.ibmcloud.eclipse.cli.feature_0.5.0.202203241839.jar" id="com.ibmcloud.eclipse.cli.feature" version="0.5.0.202203241839"/>
+</site>
