@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.ibmcloud.eclipse.cli.feature_0.5.0.202203241839.jar" id="com.ibmcloud.eclipse.cli.feature" version="0.5.0.202203241839"/>
+	<description name="IBMCloudCLI">
+      This is the update site for the IBM CloudC LI &amp; feature
+   </description>
+   <feature url="features/com.ibmcloud.eclipse.cli.feature_0.5.0.202203241839.jar" id="com.ibmcloud.eclipse.cli.feature" version="0.5.0.202203241839">
+   <category name="IBMCloudCLI"/>
+   </feature>
 </site>
