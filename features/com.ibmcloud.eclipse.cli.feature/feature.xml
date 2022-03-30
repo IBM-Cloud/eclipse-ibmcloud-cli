@@ -16,16 +16,17 @@
  -->
 <feature
       id="com.ibmcloud.eclipse.cli.feature"
-      label="IBM Cloud Dev Tools"
+      label="IBM Cloud CLIs"
       version="0.5.0.qualifier"
       provider-name="IBM Corporation">
 
-   <description url="http://www.example.com/description">
-      IBM Cloud Dev Tools
+   <description>
+      IBM Cloud CLI
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright>
+      Licensed under the Apache License, Version 2.0
+http://www.apache.org/licenses/LICENSE-2.0
    </copyright>
 
    <license url="http://www.example.com/license">
