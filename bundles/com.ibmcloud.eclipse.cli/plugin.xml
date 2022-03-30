@@ -396,8 +396,8 @@
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
                id="com.ibmcloud.eclipse.cli.menus.ic"
-               label="IBMCloud"
-               mnemonic="M">
+               label="IBM Cloud"
+               mnemonic="I">
             <command
                   commandId="com.ibmcloud.eclipse.cli.commands.version"
                   id="com.ibmcloud.eclipse.cli.menus.version"
