@@ -28,10 +28,15 @@ import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.window.Window;
 
+import com.ibmcloud.cli.IBMCloudCLIPlugin;
+
 @SuppressWarnings("restriction")
 public class IBMCloudCLIHandler extends AbstractHandler{
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		if (IBMCloudLocator.getIBMCloudLocation() == null){
+			return null;
+		}
 		ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 		try {
 			String commandName = event.getCommand().getName();
@@ -52,7 +57,7 @@ public class IBMCloudCLIHandler extends AbstractHandler{
 					 }
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			IBMCloudCLIPlugin.log(e.getLocalizedMessage());
 		}
 		return null;
 	}

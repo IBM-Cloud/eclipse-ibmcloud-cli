@@ -22,6 +22,8 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.Platform;
 
+import com.ibmcloud.cli.IBMCloudCLIPlugin;
+
 class IBMCloudLocator {
 	
 	public static final String IBMCLOUD_COMMAND_NAME = "ibmcloud";
@@ -85,9 +87,10 @@ class IBMCloudLocator {
 		
 		if (output == null || output.isBlank()) {
 			handleError();
-			System.exit(0);
+			IBMCloudLocation = null;
+		} else {
+			IBMCloudLocation = output;
 		}
-		IBMCloudLocation = output;
 	}
 	
 	static String getIBMCloudLocation() {
@@ -95,6 +98,6 @@ class IBMCloudLocator {
 	}
 	
 	private static void handleError() {
-		System.out.println("ibmcloud command not found. Please install IBM Cloud CLI from https://cloud.ibm.com/docs/apps?topic=cli-getting-started#step1-install-idt");
+		IBMCloudCLIPlugin.log("ibmcloud command not found. Please install IBM Cloud CLI from https://cloud.ibm.com/docs/apps?topic=cli-getting-started#step1-install-idt");
 	}
 }
