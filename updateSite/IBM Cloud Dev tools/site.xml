@@ -3,7 +3,7 @@
    <description name="IBMCloudCLI">
       This is the update site for the IBM CloudC LI &amp; feature
    </description>
-   <feature url="features/com.ibmcloud.eclipse.cli.feature_0.5.0.202203300633.jar" id="com.ibmcloud.eclipse.cli.feature" version="0.5.0.202203300633">
+   <feature url="features/com.ibmcloud.eclipse.cli.feature_0.5.0.202203300646.jar" id="com.ibmcloud.eclipse.cli.feature" version="0.5.0.202203300646">
       <category name="IBMCloudCLI"/>
    </feature>
    <category-def name="IBMCloudCLI" label="IBMCloudCLI"/>

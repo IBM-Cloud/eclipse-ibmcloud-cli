@@ -16,12 +16,12 @@
  -->
 <feature
       id="com.ibmcloud.eclipse.cli.feature"
-      label="IBM Cloud CLI(Preview)"
+      label="IBM Cloud CLI"
       version="0.5.0.qualifier"
       provider-name="IBM Corporation">
 
    <description>
-      IBM Cloud CLI
+      IBM Cloud CLI plug-in for Eclipse IDE(Preview)
    </description>
 
    <copyright>
