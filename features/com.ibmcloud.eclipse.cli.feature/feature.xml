@@ -16,7 +16,7 @@
  -->
 <feature
       id="com.ibmcloud.eclipse.cli.feature"
-      label="IBM Cloud CLIs"
+      label="IBM Cloud CLI(Preview)"
       version="0.5.0.qualifier"
       provider-name="IBM Corporation">
 
@@ -29,8 +29,9 @@
 http://www.apache.org/licenses/LICENSE-2.0
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license>
+       Licensed under the Apache License, Version 2.0
+http://www.apache.org/licenses/LICENSE-2.0
    </license>
 
    <plugin
